@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GroupsHub</title>
+    <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.min.css">
+    <script src="./bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 900px;
+            background-color: transparent;
+            padding: 20px;
+        }
+        .btn-success {
+            background-color: #218838;
+            border: none;
+        }
+        .btn-success:hover {
+            background-color: #1e7e34;
+        }
+        .btn-primary {
+            background-color: #0069d9;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .form-select {
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-success px-4 py-2 fw-bold">+ Add Groups</button>
+        </div>
+        
+        <!-- Filters -->
+        <!-- <div class="row mt-4">
+            <div class="col-md-3">
+                <label class="form-label">Any Category</label>
+                <select class="form-select">
+                    <option>Any Category</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Any Country</label>
+                <select class="form-select">
+                    <option>Any Country</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Any Language</label>
+                <select class="form-select">
+                    <option>Any Language</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Application Type</label>
+                <select class="form-select">
+                    <option>Application</option>
+                </select>
+            </div>
+        </div> -->
+
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <label class="form-label">Any Category</label>
+                <select class="form-select" id="categorySelect">
+                    <option>Any Category</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Any Country</label>
+                <select class="form-select" id="countrySelect">
+                    <option>Any Country</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Any Language</label>
+                <select class="form-select" id="languageSelect">
+                    <option>Any Language</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Application Type</label>
+                <select class="form-select" id="applicationSelect">
+                    <option>Application</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Find Group Button -->
+        <div class="text-center mt-4">
+            <button class="btn btn-primary px-5 py-2 fw-bold">Find Group</button>
+        </div>
+    </div>
+
+
+
+    <!-- pinned groups -->
+
+    <!-- <div class="container mt-4">
+        <h4>Most Famous Groups</h4>
+        <div id="groupCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <img src="group_icon.png" class="rounded-circle me-3" width="50" height="50" alt="Group Icon">
+                                <div>
+                                    <h6 class="mb-0">पुरोगामी विचारधारा १</h6>
+                                    <small class="text-muted">📑 News 🇮🇳 India 🏷 Marathi</small>
+                                </div>
+                            </div>
+                            <p class="mt-2">या गृपमध्ये फक्त पुरोगामी विचारांचा जागर केला जाईल...</p>
+                            <a href="#" class="btn btn-sm btn-primary">पुरोगामी विचारधारा, progressive thoughts</a>
+                            <hr>
+                            <button class="btn btn-outline-primary btn-sm">Join Group</button>
+                            <span class="float-end">Share on: 
+                                <a href="#">🟢</a> 
+                                <a href="#">📸</a>
+                                <a href="#">📩</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#groupCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#groupCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div> -->
+
+    <div class="container mt-4">
+        <div id="groupList" class="list-group">
+            <!-- Groups will be loaded here dynamically -->
+        </div>
+        <nav>
+            <ul class="pagination justify-content-center mt-3">
+                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/fetchGroups.js"></script>
+    <script src="js/populateFilters.js"></script>
+</body>
+</html>
