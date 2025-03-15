@@ -41,36 +41,10 @@
     <!-- Main Content -->
     <div class="container mt-4">
         <div class="d-flex justify-content-center">
-            <button class="btn btn-success px-4 py-2 fw-bold">+ Add Groups</button>
+            <button class="btn btn-success px-4 py-2 fw-bold" onclick="window.location.href='/pages/addgroup/addgroup.html'">
+                + Add Groups
+            </button>
         </div>
-        
-        <!-- Filters -->
-        <!-- <div class="row mt-4">
-            <div class="col-md-3">
-                <label class="form-label">Any Category</label>
-                <select class="form-select">
-                    <option>Any Category</option>
-                </select>
-            </div>
-            <div class="col-md-3">
-                <label class="form-label">Any Country</label>
-                <select class="form-select">
-                    <option>Any Country</option>
-                </select>
-            </div>
-            <div class="col-md-3">
-                <label class="form-label">Any Language</label>
-                <select class="form-select">
-                    <option>Any Language</option>
-                </select>
-            </div>
-            <div class="col-md-3">
-                <label class="form-label">Application Type</label>
-                <select class="form-select">
-                    <option>Application</option>
-                </select>
-            </div>
-        </div> -->
 
         <div class="row mt-4">
             <div class="col-md-3">
@@ -165,5 +139,15 @@
     <script src="js/navbar.js"></script>
     <script src="js/fetchGroups.js"></script>
     <script src="js/populateFilters.js"></script>
+
+    <script>
+        // Call the functions on this page
+        document.addEventListener("DOMContentLoaded", function () {
+            fetchAndPopulateFilter("categorySelect", "http://127.0.0.1:8000/api/categories", "Any Category", "id", "name");
+            fetchAndPopulateCountries("countrySelect", "http://127.0.0.1:8000/api/countries", "languageSelect");
+            fetchAndPopulateFilter("applicationSelect", "http://127.0.0.1:8000/api/applications", "Application Type", "id", "name");
+        });
+    </script>
+
 </body>
 </html>
