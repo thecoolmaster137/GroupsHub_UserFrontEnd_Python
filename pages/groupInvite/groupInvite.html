@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Group Invite</title>
+    <title>Group Info</title>
     <link rel="stylesheet" href="../../bootstrap/dist/css/bootstrap.min.css">
     <script src="../../bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <style>
@@ -17,75 +17,35 @@
     <!-- Navbar -->
     <div id="navbar-container"></div>
 
-    <div class="container my-4">
-        <!-- Group Info Section -->
-        <div class="card p-4 shadow-sm">
+    <div class="container mt-4">
+        <!-- Group Info Section (Initially Hidden) -->
+        <div class="card p-4 shadow-sm" id="groupInfo" style="display: none;">
             <div class="text-center">
-                <img src="/assets/group-logo.png" alt="Group Logo" height="80">
-                <h3 class="mt-2">पुरोगामी विचारधारा १</h3>
-                <p><span class="text-muted">&#128240; News</span> <span class="text-muted">&#127757; India</span> <span class="text-muted">&#127482;&#127474; Marathi</span></p>
+                <img id="groupImage" src="" alt="Group Logo" height="80">
+                <h3 class="mt-2" id="groupName"></h3>
+                <p id="groupMeta"></p>
             </div>
-            <p class="mt-3">या ग्रुपमध्ये फक्त पुरोगामी विचारांचा जागर केला जाईल... (Description text)</p>
+            <p class="mt-3" id="groupDesc"></p>
             <div class="d-flex justify-content-center gap-2">
-                <button class="btn btn-primary">Join Group</button>
-                <button class="btn btn-success">Share Group</button>
+                <a id="joinGroupBtn" href="#" class="btn btn-primary" target="_blank">Join Group</a>
+                <button class="btn btn-success" onclick="shareGroup()">Share Group</button>
             </div>
             <div class="mt-3">
                 <button class="btn btn-secondary">Report Group</button>
             </div>
         </div>
-        
-        <!-- Related Groups Section -->
-        <div class="mt-4">
-            <h5 class="mb-3">Related Groups</h5>
-            <div class="card p-3 shadow-sm">
-                <div class="d-flex">
-                    <img src="/assets/group-logo.png" alt="Group Logo" height="50" class="me-3">
-                    <div>
-                        <h6>प्रणय ज्ञान १</h6>
-                        <p><span class="text-muted">&#128240; News</span> <span class="text-muted">&#127757; India</span> <span class="text-muted">&#127482;&#127474; Marathi</span></p>
-                        <p class="text-muted">या ग्रुपमध्ये क्लिनिक जीवन... <a href="#">Read more</a></p>
-                        <button class="btn btn-outline-primary">Join Group</button>
-                    </div>
-                </div>
-            </div>
+
+        <!-- Related Groups Section (Initially Hidden) -->
+        <div class="mt-4" id="relatedGroupsSection" style="display: none;">
+            <h4>Related Groups</h4>
+            <div class="row" id="relatedGroups"></div>
         </div>
     </div>
 
     <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="../../js/groupInvite.js"></script>
     <script src="../../bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../js/navbar.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const SECRET_KEY = "YourSecretKey123!";
-        
-            function decryptData(encryptedData) {
-                const decrypted = CryptoJS.AES.decrypt(atob(encryptedData), SECRET_KEY).toString(CryptoJS.enc.Utf8);
-                return JSON.parse(decrypted);
-            }
-        
-            const urlParams = new URLSearchParams(window.location.search);
-            const encryptedData = urlParams.get("data");
-        
-            if (encryptedData) {
-                try {
-                    const decryptedValues = decryptData(encryptedData);
-                    console.log("Decrypted Data:", decryptedValues); // { group_id: "123", cat_id: "456" }
-
-                    const cat_id = decryptedValues.cat_id;
-                    const group_id = decryptedValues.group_id;
-
-                    console.log(cat_id);
-                    console.log(group_id);
-                
-                    // Use decryptedValues.group_id and decryptedValues.cat_id as needed
-                } catch (error) {
-                    console.error("Error decrypting data:", error);
-                }
-            }
-        });
-    </script>
 </body>
 </html>
