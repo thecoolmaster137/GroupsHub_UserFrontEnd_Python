@@ -134,11 +134,23 @@
         </nav>
     </div>
 
+    <!-- Loader -->
+    <div id="loader" class="text-center mt-3" style="display: none;">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!-- No Data Found Message -->
+    <p id="noDataMessage" style="display: none; text-align: center; color: red; font-weight: bold;">
+        No data found.
+    </p>
+
     <!-- Scripts -->
     <script src="./bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/navbar.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-    <script src="js/fetchGroups.js"></script>
+    <script src="js/fetchGroups.js" defer></script>
     <script src="js/populateFilters.js"></script>
 
     <script>
