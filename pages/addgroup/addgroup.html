@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="./../../bootstrap/dist/css/bootstrap.min.css">
     <script src="./../../bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <style>
-        body {
-            background-color: #f8f9fa;
-        }
         .form-container {
             max-width: 600px;
             margin: 50px auto;
@@ -29,75 +26,78 @@
             color: white;
         }
     </style>
+    <link rel="stylesheet" href="../../css/styles.css">
 </head>
 
 <body>
     <!-- Navbar -->
     <div id="navbar-container"></div>
 
-    <div class="container">
-        <div class="form-container">
-            <h5 class="text-center mb-3">Add Your Group</h5>
-
-            <form id="groupForm">
-                <label for="groupLink" class="form-label">Add Your Group</label>
-                <input type="text" class="form-control" id="groupLink" placeholder="Ex. https://chat.app.com/HJDK98132asSIndFIZP">
-
-                <label for="categorySelect" class="form-label">Select Category</label>
-                <select class="form-select" id="categorySelect">
-                    <option value="" disabled selected>Any Category</option>
-                </select>
-
-                <label for="countrySelect" class="form-label">Select Country</label>
-                <select class="form-select" id="countrySelect">
-                    <option value="" disabled selected>Any Country</option>
-                </select>
-
-                <label for="languageSelect" class="form-label">Select Language</label>
-                <select class="form-select" id="languageSelect">
-                    <option value="" disabled selected>Any Language</option>
-                </select>
-
-                <label for="appTypeSelect" class="form-label">Select Application Type</label>
-                <select class="form-select" id="appTypeSelect">
-                    <option value="" disabled selected>Application Type</option>
-                </select>
-
-                <label for="tags" class="form-label">Enter Tags by Comma(,) Separated (Optional)</label>
-                <input type="text" class="form-control" id="tags" placeholder="Ex:- Business, Study, Comedy, Movie (Up to 100 words)">
-
-                <label for="groupInfo" class="form-label">Enter Group Information and Rules (Optional)</label>
-                <textarea class="form-control" id="groupInfo" rows="4" placeholder="Ex:- Funny, Jokes, City, State (Up to 500 words)"></textarea>
-
-                <p class="small text-muted mt-2">Note:- Your Group is Visible to Public Worldwide (Everyone)</p>
-
-                <button type="submit" class="btn submit-btn">Submit</button>
-            </form>
+    <div class="main-content">
+        <div class="container">
+            <div class="form-container">
+                <h5 class="text-center mb-3">Add Your Group</h5>
+    
+                <form id="groupForm">
+                    <label for="groupLink" class="form-label">Add Your Group</label>
+                    <input type="text" class="form-control" id="groupLink" placeholder="Ex. https://chat.app.com/HJDK98132asSIndFIZP">
+    
+                    <label for="categorySelect" class="form-label">Select Category</label>
+                    <select class="form-select" id="categorySelect">
+                        <option value="" disabled selected>Any Category</option>
+                    </select>
+    
+                    <label for="countrySelect" class="form-label">Select Country</label>
+                    <select class="form-select" id="countrySelect">
+                        <option value="" disabled selected>Any Country</option>
+                    </select>
+    
+                    <label for="languageSelect" class="form-label">Select Language</label>
+                    <select class="form-select" id="languageSelect">
+                        <option value="" disabled selected>Any Language</option>
+                    </select>
+    
+                    <label for="appTypeSelect" class="form-label">Select Application Type</label>
+                    <select class="form-select" id="appTypeSelect">
+                        <option value="" disabled selected>Application Type</option>
+                    </select>
+    
+                    <label for="tags" class="form-label">Enter Tags by Comma(,) Separated (Optional)</label>
+                    <input type="text" class="form-control" id="tags" placeholder="Ex:- Business, Study, Comedy, Movie (Up to 100 words)">
+    
+                    <label for="groupInfo" class="form-label">Enter Group Information and Rules (Optional)</label>
+                    <textarea class="form-control" id="groupInfo" rows="4" placeholder="Ex:- Funny, Jokes, City, State (Up to 500 words)"></textarea>
+    
+                    <p class="small text-muted mt-2">Note:- Your Group is Visible to Public Worldwide (Everyone)</p>
+    
+                    <button type="submit" class="btn submit-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    
+        <!-- Bootstrap Modal for Messages -->
+        <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="messageModalLabel">Message</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="messageBody">
+                  <!-- Message will be inserted dynamically -->
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
         </div>
     </div>
-
-    <!-- Bootstrap Modal for Messages -->
-    <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="messageModalLabel">Message</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" id="messageBody">
-              <!-- Message will be inserted dynamically -->
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-    </div>
-  
 
     <script src="../../js/navbar.js"></script>
     <script src="../../js/populateFilters.js"></script>
     <script src="../../js/submitGroup.js"></script>
+    <script src="../../js/footer.js"></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
