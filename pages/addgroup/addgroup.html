@@ -101,9 +101,9 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-           fetchAndPopulateFilter("categorySelect", "http://127.0.0.1:8000/api/categories", "Any Category", "id", "name");
-           fetchAndPopulateCountries("countrySelect", "http://127.0.0.1:8000/api/countries", "languageSelect");
-           fetchAndPopulateFilter("appTypeSelect", "http://127.0.0.1:8000/api/applications", "Application Type", "id", "name");
+           fetchAndPopulateFilter("categorySelect", "https://groupshub-api-python.onrender.com/api/categories", "Any Category", "id", "name");
+           fetchAndPopulateCountries("countrySelect", "https://groupshub-api-python.onrender.com/api/countries", "languageSelect");
+           fetchAndPopulateFilter("appTypeSelect", "https://groupshub-api-python.onrender.com/api/applications", "Application Type", "id", "name");
         });
     </script>
 </body>

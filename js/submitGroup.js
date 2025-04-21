@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         try {
-            const response = await fetch("http://127.0.0.1:8000/api/groups/", {
+            const response = await fetch("https://groupshub-api-python.onrender.com/api/groups/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

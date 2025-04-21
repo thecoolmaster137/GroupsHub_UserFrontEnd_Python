@@ -42,7 +42,7 @@ function encryptData(data) {
 
 // Fetch group details
 function fetchGroupDetails(catId, groupId) {
-    fetch(`http://127.0.0.1:8000/api/categories/${catId}/groups`)
+    fetch(`https://groupshub-api-python.onrender.com/api/categories/${catId}/groups`)
         .then(response => response.json())
         .then(data => {
             if (!Array.isArray(data) || data.length === 0) {
@@ -134,7 +134,7 @@ function submitReport() {
         return;
     }
 
-    const apiUrl = `http://127.0.0.1:8000/api/report/?group_id=${encodeURIComponent(currentGroupId)}`;
+    const apiUrl = `https://groupshub-api-python.onrender.com/api/report/?group_id=${encodeURIComponent(currentGroupId)}`;
 
     const reportData = {
         report_reason: reason,  // Match FastAPI expected fields

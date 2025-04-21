@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
             selectElement.addEventListener("change", function () {
                 const selectedCountry = this.value;
                 if (selectedCountry) {
-                    fetchAndPopulateLanguages(languageSelectId, `http://127.0.0.1:8000/api/countries/languages/${selectedCountry}`);
+                    fetchAndPopulateLanguages(languageSelectId, `https://groupshub-api-python.onrender.com/api/countries/languages/${selectedCountry}`);
                 } else {
                     resetDropdown(languageSelectId, "Any Language"); // Reset languages if no country is selected
                 }

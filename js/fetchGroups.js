@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const loader = document.getElementById("loader"); // Loader element
     const noDataMessage = document.getElementById("noDataMessage"); // No Data Found Message
 
-    const API_URL = "http://127.0.0.1:8000/api/groups";
-    const SEARCH_API_URL = "http://127.0.0.1:8000/api/groups/search/";
+    const API_URL = "https://groupshub-api-python.onrender.com/api/groups";
+    const SEARCH_API_URL = "https://groupshub-api-python.onrender.com/api/groups/search/";
     const groupsPerPage = 5;
     let currentPage = 1;
     let groupsData = [];

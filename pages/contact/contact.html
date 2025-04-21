@@ -13,10 +13,79 @@
     <div id="navbar-container"></div>
 
     <div class="main-content">
-        <!-- Your page content goes here -->
+
+        <div class="container-fluid p-4 full-height-card">
+            <div class="card rounded-0 h-100 border-0">
+              <div class="card-body p-5 overflow-auto">
+              <div class="card mt-3 p-4">
+                <div class="card-header">
+                  <h5>Contact Us</h5>
+                </div>
+                <div class="card-body">
+                  <p>Email: contact@groupshub.com</p>
+          
+                  <!-- Success / Error messages -->
+                  <p class="error-message" id="errorMsg" style="display: none;"></p>
+                  <p class="success-message" id="successMsg" style="display: none;"></p>
+          
+                  <form id="contactForm">
+                    <div class="mb-3">
+                      <input type="text" class="form-control" name="name" placeholder="Your Name" required />
+                    </div>
+                    <div class="mb-3">
+                      <input type="email" class="form-control" name="email" placeholder="Your Email" required />
+                    </div>
+                    <div class="mb-3">
+                      <input type="text" class="form-control" name="subject" placeholder="Subject" required />
+                    </div>
+                    <div class="mb-3">
+                      <textarea class="form-control" name="message" rows="3" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success" id="submitBtn">Submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 
     <!-- Scripts -->
+    
+    <script>
+        const form = document.getElementById('contactForm');
+        const errorMsg = document.getElementById('errorMsg');
+        const successMsg = document.getElementById('successMsg');
+        const submitBtn = document.getElementById('submitBtn');
+      
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+      
+          errorMsg.style.display = "none";
+          successMsg.style.display = "none";
+          submitBtn.disabled = true;
+          submitBtn.innerText = "Sending...";
+      
+          // Simulate successful form submission
+          setTimeout(() => {
+            // You can replace this with your actual form submission logic (e.g., fetch or axios)
+            const success = true;
+      
+            if (success) {
+              successMsg.innerText = "Your message has been sent successfully!";
+              successMsg.style.display = "block";
+              form.reset();
+            } else {
+              errorMsg.innerText = "Something went wrong. Please try again later.";
+              errorMsg.style.display = "block";
+            }
+      
+            submitBtn.disabled = false;
+            submitBtn.innerText = "Submit";
+          }, 1500);
+        });
+      </script>
+    
     <script src="../../bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../js/navbar.js"></script>
     <script src="../../js/footer.js"></script>

@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <nav class="navbar navbar-expand-lg bg-light px-3">
         <div class="container-fluid">
             <a class="navbar-brand d-flex align-items-center" href="/index.html">
-                <img src="/assets/logo.png" alt="GroupsHub Logo" height="40" class="me-2">
+                <img src="/assets/logo.png" alt="GroupsHub" height="40" class="me-2">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     <li class="nav-item"><a class="nav-link" href="/pages/terms/terms.html">Terms</a></li>
                     <li class="nav-item"><a class="nav-link" href="/pages/privacy/privacy.html">Privacy</a></li>
                     <li class="nav-item"><a class="nav-link" href="/pages/contact/contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/pages/faq/faq.html">FAQ's</a></li>
                 </ul>
             </div>
         </div>
