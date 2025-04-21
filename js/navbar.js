@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <nav class="navbar navbar-expand-lg bg-light px-3">
         <div class="container-fluid">
             <a class="navbar-brand d-flex align-items-center" href="/index.html">
-                <img src="/assets/logo.png" alt="GroupsHub" height="40" class="me-2">
+                <img src="/assets/images/GroupsHub.png" alt="GroupsHub" height="90" width="140" class="me-2">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
